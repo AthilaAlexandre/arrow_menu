@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="stylesheet" href="./style.css"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Manu by Athila Alexandre</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <span id="marker"></span>
+            <li><a href="https://github.com/AthilaAlexandre">Home</a></li>
+            <li><a href="https://github.com/AthilaAlexandre">Sobre Nós</a></li>
+            <li><a href="https://github.com/AthilaAlexandre">Nosses Serviços</a></li>
+            <li><a href="https://github.com/AthilaAlexandre">Portfólio</a></li>
+            <li><a href="https://github.com/AthilaAlexandre">Time</a></li>
+            <li><a href="https://github.com/AthilaAlexandre">Contatos</a></li>
+        </ul>
+    </div>
+    <script>
+        let marker = document.querySelector('#marker');
+        let item = document.querySelectorAll('div ul li a');
+
+        function indicator(e){
+            marker.style.top = e.offsetTop+'px'
+            marker.style.width = e.offsetWidth+'px'
+        }
+
+        item.forEach(link => {
+            link.addEventListener('mousemove', (e) =>{
+                indicator(e.target);
+            })
+        })
+    </script>
+</body>
+</html>
